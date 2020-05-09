@@ -1,24 +1,14 @@
 <template lang="pug">
   #app
-    .row
-      .col-4
-        b-button(variant="primary" to="/") Home
-      .col-4
-        b-button(variant="primary" to="/edit") Edit
-      .col-4
-        b-button(variant="primary" to="/upload") Upload
-    .row
-      .col-12
-        router-view
+    NavBar
+    router-view
 </template>
-
 <script>
-
+import NavBar from "./components/NavBar.vue";
 export default {
-  name: 'App',
-}
+  components: { NavBar }
+};
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,6 +16,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 10px;
 }
 </style>

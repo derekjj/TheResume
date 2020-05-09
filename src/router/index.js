@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Home from "../views/Index.vue";
+import View from "../views/Index.vue";
 import Edit from "../views/Edit.vue";
 import Upload from "../views/Upload.vue";
 import NonExisting from "../views/NonExisting.vue";
@@ -13,8 +13,8 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      name: "Home",
-      component: Home,
+      name: "View",
+      component: View,
     },
     {
       path: "/edit",

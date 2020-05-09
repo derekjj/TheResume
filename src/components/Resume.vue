@@ -126,14 +126,4 @@ export default {
   text-shadow: none;
   color: #000;
 }
-
-/* h1,
-h4 {
-  text-shadow: #222 0.1em 0.1em 0.1em;
-  color: #fff;
-}
-
-h2 {
-  color: #28a745;
-} */
 </style>

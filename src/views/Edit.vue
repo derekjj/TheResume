@@ -1,9 +1,9 @@
 <template lang="pug">
   .container-flex
-    .row.mr-0
-      .col-4.pr-0.pl-4
+    .row.m-0
+      .col-lg-4.vh-100(style="overflow-y:scroll;")
         Form
-      .col-8.pl-0.pr-0
+      .col-lg-8.vh-100(style="overflow-y:scroll;")
         Resume
 </template>
 <script>
@@ -13,7 +13,14 @@ export default {
   components: {
     Form,
     Resume
-  },
-  layout: "resume"
+  }
 };
 </script>
+<style scoped>
+.body {
+  height: calc(100% - 65px);
+  height: -o-calc(100% - 65px); /* opera */
+  height: -webkit-calc(100% - 65px); /* google, safari */
+  height: -moz-calc(100% - 65px);
+}
+</style>

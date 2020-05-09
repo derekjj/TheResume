@@ -6,9 +6,13 @@ Vue.use(Vuex);
 
 // const routes: Array<RouteConfig> = [
 const store = new Vuex.Store({
+  strict: true,
   state: () => ({
-    resume: savedResume
+    resume: savedResume,
   }),
+  getters: {
+    resume: (state) => state.resume,
+  },
   mutations: {
     initialiseStore(state) {
       if (localStorage.getItem("store")) {
@@ -17,22 +21,24 @@ const store = new Vuex.Store({
         );
       }
     },
-    add(state, text) {
-      state.list.push({
-        text,
-        done: false
-      });
+    setResume(state, payload) {
+      state.resume = payload;
     },
     remove(state, { todo }) {
       state.list.splice(state.list.indexOf(todo), 1);
     },
     toggle(state, todo) {
       todo.done = !todo.done;
-    }
+    },
   },
-  getters: {
-    resume: (state) => state.resume,
-  }
+  actions: {
+    setResume(context, payload) {
+      context.commit("setResume", payload);
+    },
+    edit(context, payload) {
+      context.commit("edit", payload);
+    },
+  },
 });
 
 store.subscribe((mutation, state) => {
